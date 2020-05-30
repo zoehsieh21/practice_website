@@ -1,0 +1,31 @@
+---
+title: "Favorite Place in Baltimore"
+author: "Kalen Clifton"
+date: "5/29/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE, include=FALSE}
+r = getOption("repos")
+r["CRAN"] = "http://cran.us.r-project.org"
+options(repos = r)
+```
+
+```{r, message=FALSE, include=FALSE}
+install.packages("leaflet")
+install.packages('htmlwidgets')
+```
+
+
+```{r , message=FALSE, echo=FALSE}
+library(leaflet)
+my_map <- leaflet() %>% 
+  addTiles() %>%
+  addMarkers(lat = 39.3312 ,lng = -76.63333 , popup = "Kalen's Favorite Place in Baltimore: Quality Snowballs")
+my_map
+```
+
